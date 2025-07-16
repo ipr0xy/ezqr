@@ -5,7 +5,7 @@ import { Input } from '../../components/ui/input';
 import { QRCodePreview } from '../../components/QRCode/QRCodePreview';
 import { useItemStore } from '../../store/itemStore';
 import { validateFormData } from '../../utils/validation';
-import { parseAmount, generateUPIQRData, generatePaymentNote } from '../../utils/qrGenerator';
+import { parseAmount, generatePaymentNote } from '../../utils/qrGenerator';
 import { shareQRCode, downloadQRCode } from '../../utils/shareUtils';
 import { ArrowLeft, Loader2, Download, Share2, Save } from 'lucide-react';
 import { Item } from '../../types';
