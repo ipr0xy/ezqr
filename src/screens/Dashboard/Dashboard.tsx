@@ -36,7 +36,7 @@ export const Dashboard: React.FC = () => {
   return (
     <div className="p-4 pb-20">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">QR Ez</h1>
+        <h1 className="text-2xl font-bold text-gray-900">EZ QR</h1>
         <p className="text-gray-600">Create UPI QR codes easily</p>
       </div>
       

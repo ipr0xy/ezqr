@@ -11,7 +11,7 @@ export const Profile: React.FC = () => {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <User className="w-5 h-5" />
-            QR Ez
+            EZ QR
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -19,7 +19,7 @@ export const Profile: React.FC = () => {
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <User className="w-8 h-8 text-blue-600" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900">EZQr App</h3>
+            <h3 className="text-lg font-semibold text-gray-900">EZ QR App</h3>
             <p className="text-gray-600">Create UPI QR codes easily</p>
           </div>
         </CardContent>
