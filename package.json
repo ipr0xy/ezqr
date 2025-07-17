@@ -3,9 +3,9 @@
   "source": "./index.html",
   "type": "module",
   "name": "qr-ez-app",
-  "description": "QR Ez - Create UPI QR codes easily for instant payments",
+  "description": "EZ QR - Create UPI QR codes easily for instant payments",
   "keywords": ["qr-code", "upi", "payments", "mobile-app"],
-  "author": "QR Ez Team",
+  "author": "pr0xy",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
