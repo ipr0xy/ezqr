@@ -3,6 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/ca
 import { Info, Heart } from 'lucide-react';
 
 export const Profile: React.FC = () => {
+  const commit = (import.meta as any).env?.VITE_COMMIT_SHA || (import.meta as any).env?.VITE_COMMIT || 'dev';
+  const shortCommit = typeof commit === 'string' ? commit.substring(0, 7) : 'dev';
   return (
     <div className="p-4 pb-20">
       <h1 className="text-2xl font-bold text-gray-900 mb-6">About</h1>
@@ -55,6 +57,18 @@ export const Profile: React.FC = () => {
           </p>
         </CardContent>
       </Card>
+
+      <div className="mt-6 pb-6 text-center text-xs text-gray-500">
+        <span className="mr-2">Version:</span>
+        <a
+          href={`https://github.com/ipr0xy/ezqr/`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-mono underline hover:text-gray-700"
+        >
+          {shortCommit}
+        </a>
+      </div>
     </div>
   );
 };
