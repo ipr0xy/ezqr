@@ -183,8 +183,8 @@ export const CreateItem: React.FC = () => {
   }, [navigate]);
   
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-md mx-auto bg-white min-h-screen">
+    <div className="min-h-[100dvh] bg-gray-50">
+      <div className="max-w-md mx-auto bg-white min-h-[100dvh] flex flex-col">
         {/* Header */}
         <div className="flex items-center p-4 border-b border-gray-200">
           <Button
@@ -200,8 +200,8 @@ export const CreateItem: React.FC = () => {
         </div>
         
         {/* Scrollable Content */}
-        <div className="overflow-y-auto" style={{ height: 'calc(100vh - 60px)' }}>
-          <div className="p-3 pb-3 space-y-3">
+        <div className="flex-1 overflow-y-auto">
+          <div className="p-3 pb-6 space-y-3">
             {/* Form Section */}
             <div className="space-y-3">
               <div>
