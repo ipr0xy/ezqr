@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
 import { useItemStore } from '../../store/itemStore';
-import { Package, Plus, QrCode } from 'lucide-react';
+import { Package, Plus, QrCode, Sparkles } from 'lucide-react';
 
 export const Dashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -58,25 +58,51 @@ export const Dashboard: React.FC = () => {
         </Card>
       )}
       
-      <div className="grid grid-cols-2 gap-4 mb-6">
+      <div className="grid grid-cols-2 gap-3 mb-4">
         <Card>
-          <CardContent className="p-4 text-center">
-            <QrCode className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-            <p className="text-2xl font-bold text-gray-900">{stats.totalItems}</p>
-            <p className="text-sm text-gray-600">Total QR Codes</p>
+          <CardContent className="px-3 py-2">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <QrCode className="w-5 h-5 text-blue-600" />
+                <span className="text-xs text-gray-600">Total</span>
+              </div>
+              <span className="text-xl font-bold text-gray-900">{stats.totalItems}</span>
+            </div>
           </CardContent>
         </Card>
         
         <Card>
-          <CardContent className="p-4 text-center">
-            <Package className="w-8 h-8 text-green-600 mx-auto mb-2" />
-            <p className="text-2xl font-bold text-gray-900">{stats.activeItems}</p>
-            <p className="text-sm text-gray-600">Active QR Codes</p>
+          <CardContent className="px-3 py-2">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Package className="w-5 h-5 text-green-600" />
+                <span className="text-xs text-gray-600">Active</span>
+              </div>
+              <span className="text-xl font-bold text-gray-900">{stats.activeItems}</span>
+            </div>
           </CardContent>
         </Card>
       </div>
       
       <div className="space-y-4">
+        <Card className="mb-2 bg-gradient-to-r from-blue-50 to-green-50 border-none">
+          <CardContent className="p-4">
+            <div className="flex items-start gap-3">
+              <div className="shrink-0 w-9 h-9 rounded-full bg-white/70 flex items-center justify-center shadow-sm ring-1 ring-white/70">
+                <Sparkles className="w-5 h-5 text-blue-600" />
+              </div>
+              <div className="min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="text-sm font-semibold text-gray-900">Why EZ QR?</h3>
+                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/70 text-gray-700 ring-1 ring-white/70">Private & Instant</span>
+                </div>
+                <p className="text-sm text-gray-800 leading-snug">
+                  EZ QR lets you create and share UPI payment QR codes in seconds, with names and notes that make every transaction easy to track. Ideal for small groups and fundraisers, it runs fully on your device and works instantly on mobile.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
