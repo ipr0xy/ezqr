@@ -200,12 +200,12 @@ export const CreateItem: React.FC = () => {
         </div>
         
         {/* Scrollable Content */}
-        <div className="overflow-y-auto" style={{ height: 'calc(100vh - 73px)' }}>
-          <div className="p-4 pb-6 space-y-6">
+        <div className="overflow-y-auto" style={{ height: 'calc(100vh - 60px)' }}>
+          <div className="p-3 pb-3 space-y-3">
             {/* Form Section */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Organisation / Payee Name
                 </label>
                 <Input
@@ -215,7 +215,7 @@ export const CreateItem: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Enter your organisation name here."
-                  className={`h-12 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+                  className={`h-10 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
                   disabled={isLoading}
                   required
                   maxLength={100}
@@ -224,7 +224,7 @@ export const CreateItem: React.FC = () => {
               </div>
               
               <div>
-                <label htmlFor="upiId" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="upiId" className="block text-sm font-medium text-gray-700 mb-1">
                   UPI ID
                 </label>
                 <Input
@@ -234,7 +234,7 @@ export const CreateItem: React.FC = () => {
                   value={formData.upiId}
                   onChange={handleChange}
                   placeholder="Enter your UPI ID."
-                  className={`h-12 ${errors.upiId ? 'border-red-500' : 'border-gray-300'}`}
+                  className={`h-10 ${errors.upiId ? 'border-red-500' : 'border-gray-300'}`}
                   disabled={isLoading}
                   required
                   maxLength={50}
@@ -243,7 +243,7 @@ export const CreateItem: React.FC = () => {
               </div>
               
               <div>
-                <label htmlFor="price" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="price" className="block text-sm font-medium text-gray-700 mb-1">
                   Transaction Amount (Optional)
                 </label>
                 <div className="relative">
@@ -257,7 +257,7 @@ export const CreateItem: React.FC = () => {
                     value={formData.price}
                     onChange={handleChange}
                     placeholder="Leave empty for manual entry"
-                    className={`h-12 pl-8 ${errors.price ? 'border-red-500' : 'border-gray-300'}`}
+                    className={`h-10 pl-8 ${errors.price ? 'border-red-500' : 'border-gray-300'}`}
                     disabled={isLoading}
                   />
                 </div>
@@ -265,7 +265,7 @@ export const CreateItem: React.FC = () => {
               </div>
               
               <div>
-                <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
                   Description (Notes)
                 </label>
                 <Input
@@ -275,7 +275,7 @@ export const CreateItem: React.FC = () => {
                   value={formData.description}
                   onChange={handleChange}
                   placeholder="Enter transaction description here..."
-                  className={`h-12 ${errors.description ? 'border-red-500' : 'border-gray-300'}`}
+                  className={`h-10 ${errors.description ? 'border-red-500' : 'border-gray-300'}`}
                   disabled={isLoading}
                   maxLength={200}
                 />
@@ -290,20 +290,20 @@ export const CreateItem: React.FC = () => {
             </div>
             
             {/* QR Code Section */}
-            <div className="bg-gray-50 rounded-lg p-4">
-              <div className="space-y-4">
+            <div className="bg-gray-50 rounded-lg p-2">
+              <div className="space-y-2">
                 <div id="preview-qr">
-                  <QRCodePreview item={previewItem} />
+                  <QRCodePreview item={previewItem} qrSize={140} />
                 </div>
                 
                 {/* Action Buttons */}
-                <div className="space-y-3">
-                  <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-2">
+                  <div className="grid grid-cols-2 gap-2">
                     <Button
                       onClick={handleDownload}
                       variant="outline"
-                      className="h-11 border-blue-200 text-blue-600 hover:bg-blue-50"
-                      disabled={isDownloading || !formData.name.trim() || !formData.upiId.trim() || !formData.price}
+                      className="h-10 border-blue-200 text-blue-600 hover:bg-blue-50"
+                      disabled={isDownloading || !formData.name.trim() || !formData.upiId.trim()}
                     >
                       {isDownloading ? (
                         <Loader2 className="w-4 h-4 mr-2 animate-spin" />
@@ -316,8 +316,8 @@ export const CreateItem: React.FC = () => {
                     <Button
                       onClick={handleShare}
                       variant="outline"
-                      className="h-11 border-green-200 text-green-600 hover:bg-green-50"
-                      disabled={isSharing || !formData.name.trim() || !formData.upiId.trim() || !formData.price}
+                      className="h-10 border-green-200 text-green-600 hover:bg-green-50"
+                      disabled={isSharing || !formData.name.trim() || !formData.upiId.trim()}
                     >
                       {isSharing ? (
                         <Loader2 className="w-4 h-4 mr-2 animate-spin" />
@@ -330,7 +330,7 @@ export const CreateItem: React.FC = () => {
                   
                   <Button
                     onClick={handleSave}
-                    className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white"
+                    className="w-full h-10 bg-blue-600 hover:bg-blue-700 text-white"
                     disabled={isLoading}
                   >
                     {isLoading ? (
@@ -347,8 +347,7 @@ export const CreateItem: React.FC = () => {
                   </Button>
                 </div>
               </div>
-              {/* Added Padding */}
-              <div className='h-10'></div>
+              
             </div>
           </div>
         </div>

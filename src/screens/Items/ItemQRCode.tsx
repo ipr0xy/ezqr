@@ -365,9 +365,9 @@ export const ItemQRCode: React.FC = () => {
         </Card>
       ) : (
         <>
-          <div className="text-center mb-6">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <h1 className="text-2xl font-bold text-gray-900">{item.name}</h1>
+          <div className="text-center mb-4">
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <h1 className="text-xl font-bold text-gray-900">{item.name}</h1>
               <div className="flex items-center gap-1">
                 <span className={`text-xs px-2 py-1 rounded-full ${
                   item.isActive 
@@ -378,24 +378,24 @@ export const ItemQRCode: React.FC = () => {
                 </span>
               </div>
             </div>
-            {item.description && <p className="text-gray-600">{item.description}</p>}
+            {item.description && <p className="text-sm text-gray-600">{item.description}</p>}
           </div>
           
           <div ref={qrRef}>
-            <QRCodeDisplay item={item} organizationName={item.name} />
+            <QRCodeDisplay item={item} organizationName={item.name} qrSize={200} compact />
           </div>
           
-          <div className="mt-6 text-center text-sm text-gray-500">
+          <div className="mt-4 text-center text-xs text-gray-500">
             <p>Customers can scan this QR code to pay instantly</p>
-            <p className="mt-2">UPI ID: {item.upiId}</p>
+            <p className="mt-1">UPI ID: {item.upiId}</p>
           </div>
           
-          <div className="mt-6 space-y-3">
+          <div className="mt-4 space-y-2">
             <div className="flex gap-2">
               <Button
                 onClick={handleEdit}
                 variant="outline"
-                className="flex-1"
+                className="flex-1 h-10"
                 disabled={isLoading}
               >
                 <Edit className="w-4 h-4 mr-2" />
@@ -404,7 +404,7 @@ export const ItemQRCode: React.FC = () => {
               <Button
                 onClick={handleToggleStatus}
                 variant="outline"
-                className="flex-1"
+                className="flex-1 h-10"
                 disabled={isLoading}
               >
                 {item.isActive ? (
@@ -424,7 +424,7 @@ export const ItemQRCode: React.FC = () => {
             <Button
               onClick={handleDelete}
               variant="destructive"
-              className="w-full"
+              className="w-full h-10"
               disabled={isLoading}
             >
               <Trash2 className="w-4 h-4 mr-2" />
