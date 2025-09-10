@@ -6,9 +6,10 @@ import { QR_CODE_CONFIG } from '../../utils/constants';
 
 interface QRCodePreviewProps {
   item: Item;
+  qrSize?: number;
 }
 
-export const QRCodePreview: React.FC<QRCodePreviewProps> = memo(({ item }) => {
+export const QRCodePreview: React.FC<QRCodePreviewProps> = memo(({ item, qrSize = 180 }) => {
   // Show placeholder values when fields are empty
   const displayName = item.name === 'Organisation Name' ? 'Organisation Name' : item.name;
   const displayUpiId = item.upiId === 'your-upi@bank' ? 'your-upi@bank' : item.upiId;
@@ -22,10 +23,10 @@ export const QRCodePreview: React.FC<QRCodePreviewProps> = memo(({ item }) => {
         </h3>
       </div>
       
-      <div className="bg-white p-3 rounded-lg border inline-block">
+      <div className="bg-white p-2 rounded-lg border inline-block">
         <QRCode
           value={item.qrCodeData}
-          size={180}
+          size={qrSize}
           style={{ 
             height: "auto", 
             maxWidth: "100%", 
@@ -37,7 +38,7 @@ export const QRCodePreview: React.FC<QRCodePreviewProps> = memo(({ item }) => {
         />
       </div>
       
-      <div className="mt-3 space-y-1">
+      <div className="mt-2 space-y-1">
         {item.price > 0 ? (
           <p className="text-lg font-bold text-green-600">
             {formatCurrency(item.price)}
