@@ -37,7 +37,7 @@ export const Dashboard: React.FC = () => {
     <div className="p-4 pb-20">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-900">EZ QR</h1>
-        <p className="text-gray-600">Create UPI QR codes easily</p>
+        <p className="text-gray-600">Create & Share UPI QR Codes, Fast</p>
       </div>
       
       {error && (
@@ -85,7 +85,7 @@ export const Dashboard: React.FC = () => {
       </div>
       
       <div className="space-y-4">
-        <Card className="mb-2 bg-gradient-to-r from-blue-50 to-green-50 border-none">
+        <Card className="mb-2 bg-blue-50 border-none">
           <CardContent className="p-4">
             <div className="flex items-start gap-3">
               <div className="shrink-0 w-9 h-9 rounded-full bg-white/70 flex items-center justify-center shadow-sm ring-1 ring-white/70">
@@ -103,32 +103,28 @@ export const Dashboard: React.FC = () => {
             </div>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <QrCode className="w-5 h-5" />
-              Quick Actions
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <Button
-              onClick={handleCreateNew}
-              className="w-full justify-start"
-            >
-              <Plus className="w-4 h-4 mr-2" />
-              Create New QR Code
-            </Button>
-            
-            <Button
-              onClick={handleViewAll}
-              className="w-full justify-start"
-              variant="outline"
-            >
-              <Package className="w-4 h-4 mr-2" />
-              View All QR Codes
-            </Button>
-          </CardContent>
-        </Card>
+        <div>
+          <h2 className="text-xl font-semibold text-gray-900 mb-3">Generate & Manage</h2>
+          <Card>
+            <CardContent className="space-y-3 p-4">
+              <Button
+                onClick={handleCreateNew}
+                className="w-full justify-start"
+              >
+                <Plus className="w-4 h-4 mr-2" />
+                Create New QR Code
+              </Button>
+              <Button
+                onClick={handleViewAll}
+                className="w-full justify-start"
+                variant="outline"
+              >
+                <Package className="w-4 h-4 mr-2" />
+                View All QR Codes
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
         
         {stats.totalItems === 0 && (
           <Card className="border-dashed border-2 border-gray-300">

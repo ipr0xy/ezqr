@@ -302,7 +302,7 @@ export const CreateItem: React.FC = () => {
                     <Button
                       onClick={handleDownload}
                       variant="outline"
-                      className="h-10 border-blue-200 text-blue-600 hover:bg-blue-50"
+                      className="h-10"
                       disabled={isDownloading || !formData.name.trim() || !formData.upiId.trim()}
                     >
                       {isDownloading ? (
@@ -316,7 +316,7 @@ export const CreateItem: React.FC = () => {
                     <Button
                       onClick={handleShare}
                       variant="outline"
-                      className="h-10 border-green-200 text-green-600 hover:bg-green-50"
+                      className="h-10"
                       disabled={isSharing || !formData.name.trim() || !formData.upiId.trim()}
                     >
                       {isSharing ? (
@@ -330,7 +330,7 @@ export const CreateItem: React.FC = () => {
                   
                   <Button
                     onClick={handleSave}
-                    className="w-full h-10 bg-blue-600 hover:bg-blue-700 text-white"
+                    className="w-full h-10"
                     disabled={isLoading}
                   >
                     {isLoading ? (
