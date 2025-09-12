@@ -29,15 +29,9 @@ export const ItemList: React.FC = () => {
   
   return (
     <div className="p-4 pb-20">
-      <div className="flex justify-between items-center mb-6">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">My QR Codes</h1>
-          <p className="text-gray-600">Manage your payment QR codes</p>
-        </div>
-        <Button onClick={handleCreateNew}>
-          <Plus className="w-4 h-4 mr-2" />
-          Create QR
-        </Button>
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-gray-900">My QR Codes</h1>
+        <p className="text-gray-600">Manage your payment QR codes</p>
       </div>
       
       {error && (
