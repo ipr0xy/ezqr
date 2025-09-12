@@ -4,7 +4,7 @@ import { Card, CardContent } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
 import { useItemStore } from '../../store/itemStore';
 import { formatCurrency } from '../../utils/qrGenerator';
-import { Package, Plus, QrCode, ToggleLeft, ToggleRight } from 'lucide-react';
+import { Package, QrCode, ToggleLeft, ToggleRight } from 'lucide-react';
 
 export const ItemList: React.FC = () => {
   const navigate = useNavigate();

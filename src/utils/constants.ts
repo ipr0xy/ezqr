@@ -1,8 +1,8 @@
 export const APP_CONFIG = {
-  name: 'QR Ez',
-  description: 'Create UPI QR codes easily for instant payments',
+  name: 'EZ QR',
+  description: 'Create and Manage UPI QR Code',
   version: '1.0.0',
-  author: 'QR Ez Team'
+  author: 'pr0xy'
 } as const;
 
 export const STORAGE_KEYS = {
